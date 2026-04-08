@@ -10,7 +10,7 @@ class Facilities(models.Model):
 
     facility_id = models.AutoField(primary_key=True)
     provider = models.ForeignKey(
-        'providers.Providers',  # matches your actual model name
+        'providers.Providers',  
         on_delete=models.CASCADE,
         null=True,
         blank=True,

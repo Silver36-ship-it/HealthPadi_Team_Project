@@ -6,13 +6,11 @@ from .models import Providers
 from .serializers import ProviderSerializer
 
 
-# Get all verified providers
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def provider_list(request):
     providers = Providers.objects.filter(is_verified=True)
 
-    # Optional filters
     city = request.query_params.get('city')
     provider_type = request.query_params.get('type')
 
